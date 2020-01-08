@@ -1,0 +1,16 @@
+<script src="test.js">
+
+</script>
+<script>
+
+</script>
+
+variables: to stores the data.
+var name = "james";
+var password = "@james_1";
+var number = 56;
+
+3message alerts:
+    1 prompt
+    2 alert
+    3 confirm
