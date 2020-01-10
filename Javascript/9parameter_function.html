@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            function disp(val1,val2,val3 /*arguments */) { //implementation of a function
+                
+                if(val1 > val2 && val1 > val3) {
+                    alert(val1+" is greater");
+                }
+                else if(val2 > val1 && val2 > val3){
+                    alert(val2+" is greater");
+                }
+                else {
+                    alert(val3+" is greater");
+                }
+            }
+           
+        </script>
+    </head>
+    <body>
+        <input type="submit" value="submit" onclick=" disp(2,3,4/*parameters */) ">
+    </body>
+</html>
