@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+            #inp {
+                width: 132px; height: 30px;
+            }
+            input[type='submit'] {
+                width: 30px; height: 30px;
+                margin-top: 2px;
+            }
+            .cal {
+                width: 132px; height: auto; border: 1px solid gray;
+                margin: 0px auto;
+            }
+        </style>
+        <script>
+            function cal(val) { 
+                // alert(val);
+                //"123+456"+'-' = "123+456-"
+                // 1+"aax"="1aax"
+                if(val != '='){
+                    document.getElementById("inp").value =  document.getElementById("inp").value + val;
+                }
+                else {
+                    document.getElementById("inp").value = eval(document.getElementById("inp").value);
+                }
+                
+            }
+            function clr() {
+                document.getElementById("inp").value = '';
+            }
+            function cls() {
+                window.close();//to close the window
+            }
+        </script>
+    </head>
+     <body>
+         <div class="cal">
+            <input type="text" id="inp">
+            <br>
+           <input type="submit" value="1" onclick="cal(1)">
+           <input type="submit" value="2" onclick="cal(2)">
+           <input type="submit" value="3" onclick="cal(3)">
+           <input type="submit" value="+" onclick="cal('+')">
+           <br>
+           <input type="submit" value="4" onclick="cal(4)">
+           <input type="submit" value="5" onclick="cal(5)">
+           <input type="submit" value="6" onclick="cal(6)">
+           <input type="submit" value="-" onclick="cal('-')">
+           <br>
+           <input type="submit" value="7" onclick="cal(7)">
+           <input type="submit" value="8" onclick="cal(8)">
+           <input type="submit" value="9" onclick="cal(9)">
+           <input type="submit" value="/" onclick="cal('/')">
+           <br>
+           <input type="submit" value="0" onclick="cal(0)">
+           <input type="submit" value="c" onclick="clr()">
+           <input type="submit" value="=" onclick="cal('=')">
+           <input type="submit" value="*" onclick="cal('*')">
+           <input type="submit" value="X" onclick="cls()">
+         </div>
+
+     </body>
+</html>
