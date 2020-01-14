@@ -1,0 +1,40 @@
+<head>
+    <html>
+        <style>
+            .parent {
+                width: 600px; height: 500px; border: 3px solid black;
+                margin: 50px; position: relative;
+            }
+            .box1 {
+                width: 300px; height: 100px; background: red;
+            }    
+            .box2 {
+                width: 300px; height: 100px; background: rgb(91, 184, 37);
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                z-index: 1;
+            }    
+            .box3 {
+                width: 300px; height: 100px; background: rgb(95, 45, 177);
+            }    
+            .model {
+                width: 300px; height: 100px; background: rgb(95, 45, 177);
+                position: absolute;
+                bottom: 0px; right: 0px;
+            }
+            </style>
+    </head>
+    <body>
+        <div>
+            <div class="parent">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+        </div>
+        <div class="model">
+
+        </div>
+    </body>
+</html>

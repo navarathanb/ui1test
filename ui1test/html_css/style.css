@@ -1,0 +1,169 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/* body {
+    margin-top: 5px;
+} */
+.parent {
+    width: 1000px;
+    height: auto;
+    background: lightgray;
+    margin: 0px auto;
+}
+.parent .head {
+    height: 100px; background: rgb(255, 255, 255); 
+}
+.head .logo {
+    height: 100px; float: left;
+}
+.head .title {
+    float: left; color: rgb(24, 24, 192); margin-top: 40px; font-size: 25px;
+}
+
+.head .social {
+    width: 300px; height: 100px; 
+    float: right;
+}
+.social .icon { 
+    width: 40px; height: 40px;
+    float: right; margin-top: 30px;
+    margin-right: 5px;
+}
+.social .icon:hover{
+    border-radius: 40px;
+}
+/* menu creation */
+.parent .menu {
+    width: 1000px; height: 40px; background: rgb(246, 250, 44);
+}
+.menu .nav {
+    list-style: none;
+}
+.menu .nav li {
+    float: left;
+    width: 194px;
+    background: orange;
+    height: 40px;
+    text-align: center;
+    margin-left: 5px;
+    line-height: 40px;
+    
+}
+.menu .nav li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+.menu .nav li:hover {
+    background: rgb(46, 177, 46);
+}
+.menu .nav .subnav {
+    position: relative;
+    list-style: none;
+    visibility: hidden;
+}
+.menu .nav .subnav li {
+    margin-left: 0px;
+    border-bottom: 1px solid white;
+}
+.subnavli1 {
+    border-top: 1px solid white;
+}
+.menu .nav li:hover .subnav {
+    visibility: visible;
+}
+.menu .nav .subnav .subsubnav {
+    position: relative;
+    list-style: none;
+    visibility: hidden;
+    left: 194px;
+    top: -40px;
+}
+.menu .nav .subnav li:hover .subsubnav {
+    visibility: visible;   
+}
+.subnav .subsubnav li{
+    border-left: 1px solid white;
+}
+
+
+
+/* menu creation end */
+
+.parent .slider {
+    width: 1000px; height: 350px;
+}
+.parent .slider img {
+    height: 350px; width: 1000px;
+}
+.parent .services {
+    height: 800px !important;
+}
+.parent .content {
+    width: 1000px; height: 530px; background: burlywood;
+}
+
+.parent .content .left {
+    width: 250px; height: 530px; background: rgb(28, 132, 202); float: left;
+}
+.left .title {
+    line-height: 40px; background: #3F51B5;
+    text-align: center; color: white;
+}
+.left .data {
+    margin: 10px; text-align: justify; color: lightgray;line-height: 20px;
+}
+.left img {
+    width: 100%;
+}
+.parent .content .right {
+    width: 750px; height: 530px; background: rgb(218, 214, 214); float: left;
+}
+.right .service {
+    width: 360px; height: 250px; background: rgb(255, 255, 255); float: left; margin-left: 10px;
+    margin-top: 10px;
+}
+.right .service .servimg {
+    width: 200px; margin: 5px auto; display: block; height: 150px;
+}
+.right .service h4 {
+    text-align: center; color: blue;
+}
+.right .service .data {
+    margin: 5px 10px; text-align: justify;
+    overflow: hidden; height: 56px;
+}
+.right .service .data:hover {
+    overflow: auto;
+}
+.parent .footer {
+    width: 1000px; height: 60px; background: black; color: gray; text-align: center; line-height: 60px;
+}
+.parent .content .contactus {
+    background: rgb(245, 244, 244) !important;
+}
+.contactus .contacthead {
+    color: blue;
+    margin: 30px 50px;
+}
+.contactus .contactform {
+    margin-left: 100px;
+}
+.contactus .contactform .inp {
+    margin-left: 40px;
+    margin-bottom: 2px;
+    width: 300px;
+    height: 30px;
+}
+.contactus .contactform .text {
+    width: 480px;
+    height: 200px;
+} 
+.contactus .contactform .btn {
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background: orange;
+    border: 0px;
+}
