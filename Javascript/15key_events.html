@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+            function disp(val) {
+                //var state = document.getElementById("state").value;
+                // alert(state);
+                //var val = document.getElementById("inp").value;
+                document.getElementById("res").innerHTML = "Value: "+val+"<br>Length: "+val.length;
+                if(val == 'ap state') {
+                    document.getElementById("data").innerHTML = "<h2>"+val+"</h2><p>Andhra Pradesh is a state bordering India’s southeastern coast. Major cultural landmarks include Tirumala Venkateswara Temple, an ornate hilltop shrine to Hindu’s Vishnu, in the southern part of the state. It’s visited by tens of millions of pilgrims annually. The major northern port of Visakhapatnam has popular beaches like Ramakrishna and Rishikonda lining the Bay of Bengal, offering spots for swimming and surfing.</p>";
+                }
+                else if(val == 'up state') {
+                    document.getElementById("data").innerHTML = "<h2>"+val+"</h2><p>Uttar Pradesh is a state bordering India’s southeastern coast. Major cultural landmarks include Tirumala Venkateswara Temple, an ornate hilltop shrine to Hindu’s Vishnu, in the southern part of the state. It’s visited by tens of millions of pilgrims annually. The major northern port of Visakhapatnam has popular beaches like Ramakrishna and Rishikonda lining the Bay of Bengal, offering spots for swimming and surfing.</p>";
+                }
+                else if(val == 'mp state') {
+                    document.getElementById("data").innerHTML = "<h2>"+val+"</h2><p>Madhya Pradesh is a state bordering India’s southeastern coast. Major cultural landmarks include Tirumala Venkateswara Temple, an ornate hilltop shrine to Hindu’s Vishnu, in the southern part of the state. It’s visited by tens of millions of pilgrims annually. The major northern port of Visakhapatnam has popular beaches like Ramakrishna and Rishikonda lining the Bay of Bengal, offering spots for swimming and surfing.</p>";
+                }
+                else {
+                    document.getElementById("data").innerHTML = "<h4>Please select any state to get state data..</h4>";
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <!-- keyevents: onkeyup, onkeydown, onkeypress
+            onkeyup - when you release any key,
+            onkeypress - when you press down only alpha numberic.
+            onkeydown - when you press down anykey
+        -->
+        <input type="text" id='inp' onkeyup="disp(this.value)">
+        <!-- <input type="submit" value="submit" onclick="disp()"> -->
+        <div id="res"></div>
+        
+        <div id="data" style="width: 300px; height: auto; border: 2px solid blue; padding: 10px;">
+
+        </div>
+    </body>
+</html>
