@@ -12,32 +12,31 @@
                 var val = document.getElementById("inp").value;
                 document.getElementById("new").innerHTML = "value = "+val+"<br>"+"length = "+val.length;
                 if (parseInt(val.length) <= '5') {
-                    document.getElementById("new").style.width = '100'*val.length;
+                    document.getElementById("new").style.width = '10'*val.length;
                     document.getElementById("new").style.background = 'red';
                 }
-                else if (parseInt(val.length) > '5' && parseInt(val.length) < '10' ) {
-                    document.getElementById("new").style.width = '100'*val.length;
+                else if (parseInt(val.length) > '5' && parseInt(val.length) <= '10' ) {
+                    document.getElementById("new").style.width = '10'*val.length;
                     document.getElementById("new").style.background = 'orange';
                 }
                 //else if (parseInt(val.length) = '10' ) {
                   //  document.getElementById("new").style.width = '100'*val.length;
                     //document.getElementById("new").style.background = 'orange';
                 //} 
-                else if (parseInt(val.length) > '10' && parseInt(val.length) < '15' ) {
-                    document.getElementById("new").style.width = '100'*val.length;
+                else if (parseInt(val.length) > '10' && parseInt(val.length) <= '15' ) {
+                    document.getElementById("new").style.width = '10'*val.length;
                     document.getElementById("new").style.background = 'green';
                 }
                 else  {
-                    document.getElementById("new").style.width = '100'*val.length;
+                    document.getElementById("new").style.width = '10'*val.length;
                     document.getElementById("new").style.background = 'yellow';
                 }
             }     
         </script>
     </head>
     <body>
-        Password: <input type="text" id='inp'> 
-        <input type="submit" value="submit" onclick="disp()">
-        <div id="new" style="width: 100px; height: 40px; border: 1px solid red; margin: 30px; background: salmon;">
+        Password: <input type="text" id='inp' onkeyup="disp()"> 
+        <div id="new" style="width:0px;height: 40px; border: 1px solid red; margin: 30px; background: salmon;">
         </div>
     </body>
 </html>
