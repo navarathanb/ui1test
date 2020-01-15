@@ -1,0 +1,19 @@
+<script>
+   function disp() {
+    // var name = "james";
+    // var value = 32;
+    // var value2 = "45";
+    // var res = true;
+    var obj = {"name":"james","email":"james@gmail.com","mobile":"023432432","id":100};
+    var array = ["james","james@gmail.com","023432432",100];
+    var json = [{"name":"james","email":"james@gmail.com","mobile":"023432432","id":100},{"name":"james","email":"james@gmail.com","mobile":"023432432","id":100},{"name":"james","email":"james@gmail.com","mobile":"023432432","id":100},{"name":"james","email":"james@gmail.com","mobile":"023432432","id":100}];//javascript object notation
+    var table = "<table border='1' cellpadding='10'><tr><td>Id</td><td>Name</td><td>Email</td><td>Mobile</td></tr><tr><td>"+obj.id+"</td><td>"+obj.name+"</td><td>"+obj.email+"</td><td>"+obj.mobile+"</td></tr></table>";
+    document.getElementById("res").innerHTML = table;
+   }
+</script>
+<body>
+    <div id="res">
+        <script>disp()</script>
+    </div>
+
+</body>
