@@ -8,16 +8,25 @@
                 var val2 = parseInt(document.getElementById("b").value);
                 
                 var res;
-                
-                //pass the result to markup div#result
+                if(val == 'sum'){
+                   res = val1+val2;
+                    
+                }
+                else if(val == 'mul'){
+                    res = val1*val2;
+                }
+                else if(val == 'sub'){
+                    res = val1-val2;
+                }
+                else {
+                    res = val1/val2;
+                }
+                document.getElementById('result').innerHTML = "The result is="+res;
             }           
         </script>
     </head>
     <body>
-        <script>
-         // document.
-        </script>
-        value1<input type="text" id="a" value="">
+        value1<input type="text" id="a">
         value2<input type="text" id="b">
         <input type="submit" value="sum" onclick=" disp('sum') ">
         <input type="submit" value="mul" onclick=" disp('mul') ">
@@ -25,7 +34,6 @@
         <input type="submit" value="div" onclick=" disp('div') ">
         <br>
         <br>
-        Result: <div id="result"><!-- innerHTML --></div>
-        
+        Result: <div id="result"><!-- innerHTML --></div> 
     </body>
 </html>
