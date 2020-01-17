@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            .tabled {
+                border-collapse: collapse;
+                width: 500px;
+            }
+            .firstrow {
+                background-color: blue;
+                color: white;
+            }
+        </style>
+        <script>
+            //ajax: asynchronous javascript and xml
+            //ajax is a service to fetch external data.
+            function disp(){
+                var json,ajax;
+
+                if(window.XMLHttpRequest) { // except IE 5 & 6
+                   ajax = new XMLHttpRequest();
+                }else {//ie 5 & 6
+                    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                ajax.onreadystatechange = function() {
+                    if(ajax.readyState == 4 && ajax.status == 200) {
+                        json = ajax.responseText;
+                        json = JSON.parse(json);//string to json data
+                        var table = "<table class='tabled' border='1' cellpadding='10'><tr class='firstrow'><td>Data</td></tr>";
+                        for(i=0;i<json.length;i++) {
+                            table += "<tr><td>"+json[i]+"</td></tr>"
+                        }
+                        table += "</table>";
+                        document.getElementById("result").innerHTML = table;
+                    }
+                }
+
+                ajax.open("get", "https://baconipsum.com/api/?type=all-meat&paras=10&start-with-lorem=1", true );//sync: false, async: true
+                ajax.send();//send the request
+
+
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div id="result" style="height:500px; overflow: auto;">
+            <script>disp()</script>
+        </div>
+    </body>
+</html>
