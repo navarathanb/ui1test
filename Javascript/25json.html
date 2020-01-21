@@ -1,0 +1,27 @@
+<html>
+    <style>
+        #res .table {
+            width: 600px;
+            border
+        }
+    </style>
+    <script>
+        function disp() {
+         var json = [{"name":"james","email":"james@gmail.com","mobile":"023432432","id":100},{"name":"james","email":"james@gmail.com","mobile":"023432432","id":100},{"name":"james","email":"james@gmail.com","mobile":"023432432","id":100},{"name":"james","email":"james@gmail.com","mobile":"023432432","id":100}];//javascript object notation
+         var data = "<table class='table' border='1' cellpadding='10'><tr><td>Sno</td><td>Name</td><td>Email</td><td>Mobile</td></tr>";
+         for(var i=0;i<json.length;i++) {
+            data += "<tr><td>"+json[i].id+"</td><td>"+json[i].name+"</td><td>"+json[i].email+"</td><td>"+json[i].mobile+"</td></tr>";
+            //x = x+y => x += y
+         }
+         data += "</table>";
+         document.getElementById("res").innerHTML = data;
+
+        }
+     </script>
+     <body>
+         <div id="res">
+             <script>disp()</script>
+         </div>
+     
+     </body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <div id="div" style="width: 200px; height: 200px; border: 2px solid red;"></div>
+        <script>
+            document.getElementById("div").addEventListener('click',function(evt){
+                evt.target.style.background = "orange";
+            });
+            document.getElementById("div").addEventListener('mouseover',function(evt){
+                evt.target.style.width = "500px";
+            });
+            // function disp() {
+
+            // }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+            function disp() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var mobile = document.getElementById("mobile").value;
+                var password = document.getElementById("pwd").value;
+                if(name.length == 0) {
+                    //alert("Please neter name");
+                    document.getElementById("error").innerHTML = "Please enter name";
+                    document.getElementById("name").focus();
+                    return false;
+                }
+                if(email.length == 0) {
+                    //alert("Please neter name");
+                    document.getElementById("error").innerHTML = "Please enter email";
+                    document.getElementById("email").focus();
+                    return false;
+                }
+                if(mobile.length == 0) {
+                    //alert("Please neter name");
+                    document.getElementById("error").innerHTML = "Please enter mobile";
+                    document.getElementById("mobile").focus();
+                    return false;
+                }
+                if(password.length == 0) {
+                    //alert("Please neter name");
+                    document.getElementById("error").innerHTML = "Please enter passwprd";
+                    document.getElementById("pwd").focus();
+                    return false;
+                }
+            }    
+            
+        </script>
+    </head>
+    <body>
+        <div style="color:red;" id="error"></div>
+        <form method="get" action="11calculater.html">
+            Name: <input type="text" id="name" name="name"><br>
+            Email: <input type="text" id="email" name="email"><br>
+            Mobile: <input type="text" id="mobile" name="mobile"><br>
+            Password: <input type="password" id="pwd" name="password"><br>
+            <input type="submit" value="submit" onclick="return disp()">
+        </form>
+    </body>
+</html>
