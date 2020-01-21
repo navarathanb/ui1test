@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            var name = "My name is James";
+                document.write("Name: "+name+"<br>");
+                document.write("Name length: "+name.length+"<br>");
+                document.write("Name index: "+name.indexOf('a')+"<br>");
+                document.write("Name substring: "+name.slice(3)+"<br>");
+                document.write("Name substring: "+name.slice(3,6)+"<br>");// 3 to 5
+                document.write("Name substring: "+name.slice(-4,-2)+"<br>");// -3 to -2
+                document.write("Name substring: "+name.substr(2,6)+"<br>");// -3 to -2
+
+                var url = "https://www.google.com/test.html";
+                var test = url.slice(-4, -1);
+                document.write(test);
+                if(url.indexOf(".html") != -1) {
+                    document.write("Correct URL<br>");
+                }
+                else {
+                    document.write("Wrong URL<br>")
+                }
+                var arr = name.split(" ");//string to array
+                var val = 90;
+                document.write("array: "+arr+"<br>");
+                document.write("lowercase: "+name.toLowerCase()+"<br>");
+                document.write("lowercase: "+name.toUpperCase()+"<br>");
+                document.write("string"+val.toString()+"<br>");
+                
+
+        </script>
+    </head>
+    <body>
+       Name : <input type="text" onkeyup="this.value = this.value.toUpperCase()">
+
+    </body>
+</html>

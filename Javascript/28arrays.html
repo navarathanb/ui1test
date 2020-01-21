@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+            var arr = ["a","string","324",23432];
+            document.write("arrya : "+arr+"<br>");    
+            document.write("arrya : "+arr.length+"<br>");    
+            document.write("arrya index 1 : "+arr[1]+"<br>");  
+            arr.push("Test");//to push the values into array at last position
+            
+            document.write("arrya push: "+arr+"<br>");    
+            arr.unshift("Test");//to push the values into array at first position
+            document.write("arrya unshift: "+arr+"<br>");    
+            
+            arr.pop();//to delete the values from array at last position
+            
+            document.write("arrya pop: "+arr+"<br>");    
+            arr.shift();//to delete the values from array at first position
+            document.write("arrya shift: "+arr+"<br>");   
+
+            var str = arr.join(" ");//to convert array into string.
+            document.write("string: "+str+"<br>");   
+
+            //splice(position, length to delete, insert value); insert/delete
+
+            arr.splice(2,1,"rathan");//insert
+            document.write("array splice insert: "+arr+"<br>");
+            arr.splice(2,1);//delete
+            document.write("array splice delete: "+arr+"<br>");
+        </script>
+    </head>
+</html>
