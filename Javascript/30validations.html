@@ -6,9 +6,21 @@
                 var email = document.getElementById("email").value;
                 var mobile = document.getElementById("mobile").value;
                 var password = document.getElementById("pwd").value;
+
+                var namepattern = /^[a-z]+$/;
+                var emailpattern = /^[a-z]+[a-z0-9\.\_]+[@]+[a-z\.]+[.]+[a-z]+$/;
+                //rathan.basa05@yahoo.co.uk
+                var mobilepattern = /^[0-9]+$/;
+                var passwordpattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%])[a-zA-Z0-9@#$%]+$/;
+
                 if(name.length == 0) {
                     //alert("Please neter name");
                     document.getElementById("error").innerHTML = "Please enter name";
+                    document.getElementById("name").focus();
+                    return false;
+                }
+                if(!name.match(namepattern)) {
+                    document.getElementById("error").innerHTML = "Please enter name, and should only small characters";
                     document.getElementById("name").focus();
                     return false;
                 }
@@ -18,15 +30,36 @@
                     document.getElementById("email").focus();
                     return false;
                 }
-                if(mobile.length == 0) {
+                
+                if(!email.match(emailpattern)) {
                     //alert("Please neter name");
-                    document.getElementById("error").innerHTML = "Please enter mobile";
+                    document.getElementById("error").innerHTML = "Please enter email ex. abc@xyz.com";
+                    document.getElementById("email").focus();
+                    return false;
+                }
+
+                if(mobile.length < 10) {
+                    //alert("Please neter name");
+                    document.getElementById("error").innerHTML = "Please enter mobile and should be min 10 digit";
                     document.getElementById("mobile").focus();
                     return false;
                 }
+                if(!mobile.match(mobilepattern)) {
+                    //alert("Please neter name");
+                    document.getElementById("error").innerHTML = "Please enter mobile, should only numbers";
+                    document.getElementById("mobile").focus();
+                    return false;
+                }
+
                 if(password.length == 0) {
                     //alert("Please neter name");
                     document.getElementById("error").innerHTML = "Please enter passwprd";
+                    document.getElementById("pwd").focus();
+                    return false;
+                }
+                if(!password.match(passwordpattern)) {
+                    //alert("Please neter name");
+                    document.getElementById("error").innerHTML = "Please enter passwprd, should contains atleasr one small, one caps, one numeric and any special character from '@#$%'";
                     document.getElementById("pwd").focus();
                     return false;
                 }

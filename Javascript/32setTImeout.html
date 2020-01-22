@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+        <script>
+            
+            function disp() {
+                var arr = ["img/1.jpg","img/2.jpg","img/3.jpg"];
+                
+                document.image.src = arr[1];
+                
+                
+            }
+           var stop = setTimeout("disp()",3000);// executes one time only after 3 sec.
+            //clearTimeout(stop) // to stop setTimeout
+        </script>
+    </head>
+    <body>
+        <div id="div">
+            <img name="image" src="img/1.jpg" alt="" style="width: 500px; height: 250px;">
+        </div>
+    </body>
+</html>
