@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script>
+            //OOPS : Object oriented programming structure..
+            /*
+            encapsulation, abstraction and polymorphism
+            encapsulation: wrapping of data(variables) and code(functions) into single unit(class).
+            abstraction: hiding of the data to the user.
+            polymorphism: many forms
+                1 overloading, 2 overriding.
+
+            */
+            function parent() {
+                this.name = "James";
+                this.email = "james@gmail.com";
+                this.mobile = 23432432;
+                this.data = function() {
+                    document.getElementById("div1").innerHTML += "Name : "+this.name+"<br> Email: "+this.email+"<br>";
+                }
+                this.cals = function() {
+                    return "<h2>Ph: "+this.mobile+"</h2>";
+                }
+
+            }
+            var obj = new parent();// creation of an object and initialization of object
+            //parent is a constructor
+        </script>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <script>
+            obj.data();
+            var result = obj.cals();
+            document.getElementById("div2").innerHTML = result + obj.name;
+            var obj2 = new parent();
+            obj2.name = "Kishore";
+            obj2.email = "kishore@gmail.com";
+            obj2.data();
+        </script>
+    </body>
+</html>

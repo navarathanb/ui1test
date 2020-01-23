@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+           
+            function parent() {
+                this.name = "James";
+                this.email = "james@gmail.com";
+                this.mobile = 23432432;
+                this.data = func1;
+                this.cals = function() {
+                    return "<h2>Ph: "+this.mobile+"</h2>";
+                }
+
+            }
+            function func1() {
+                document.getElementById("div1").innerHTML += "Name : "+this.name+"<br> Email: "+this.email+"<br>";
+            }
+            // func1();
+            var obj = new parent();// creation of an object and initialization of object
+            //parent is a constructor
+        </script>
+    </head>
+    <body>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <script>
+            obj.data();
+            var result = obj.cals();
+            document.getElementById("div2").innerHTML = result + obj.name;
+            var obj2 = new parent();
+            obj2.name = "Kishore";
+            obj2.email = "kishore@gmail.com";
+            obj2.data();
+        </script>
+    </body>
+</html>
