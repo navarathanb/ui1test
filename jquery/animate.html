@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+        <style>
+            .box1 {
+                width: 10px; height: 10px;  float: left;margin: 2px;
+            }
+            .box {
+                width: 100px; height: 100px; background: rgb(33, 184, 28);float: left;margin:2px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- before -->
+        <div class="box">
+
+        </div>
+        <!-- after -->
+        <script>
+            $(function(){
+                $(document).click(function() {
+                    // $(".box").before("<div class='box1'></div>");
+                    $(".box").after("<div class='box1'></div>");
+                    $(".box1").css("background","orange");
+                    $(".box1").animate({width:'100px', height:'100px'},1000);
+                    $(".box1").animate({borderRadius:'100px', height:'200px', width:'200px'},1000);
+                    
+                })
+            });
+        </script>
+    </body>
+</html>
