@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+        <style>
+            .box1 {
+                width: 100px; height: 100px; background: orange; float: left;margin: 2px;
+            }
+            .box {
+                width: 100px; height: 100px; background: rgb(33, 184, 28);float: left;margin:2px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- before -->
+        <div class="box">
+
+        </div>
+        <!-- after -->
+        <script>
+            $(function(){
+                $(document).click(function() {
+                    // $(".box").before("<div class='box1'></div>");
+                    $(".box").after("<div class='box1'></div>");
+                })
+            });
+        </script>
+    </body>
+</html>

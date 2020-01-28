@@ -24,6 +24,7 @@
                 ajax.onreadystatechange = function() {
                     if(ajax.readyState == 4 && ajax.status == 200) {
                         json = ajax.responseText;
+                        
                         json = JSON.parse(json);//string to json data
                         var table = "<table class='tabled' border='1' cellpadding='10'><tr class='firstrow'><td>Data</td></tr>";
                         for(i=0;i<json.length;i++) {

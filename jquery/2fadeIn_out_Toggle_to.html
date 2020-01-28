@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+        <script src="jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <button id="click">Click</button>
+        <button id="toggle">Toggle</button>
+        <button id="fadeTo">fadeTo</button>
+        <div style="width: 300px; height: 200px; background: red;"></div>
+        <div style="width: 300px; height: 200px; background: rgb(103, 173, 23);"></div>
+        <div style="width: 300px; height: 200px; background: rgb(25, 0, 255);"></div>
+        <!-- fade = opacity -->
+        <script>
+            $(document).ready(function() {
+                $("div").click(function() {
+                    $(this).fadeOut(1000); //hide
+                });
+                $("#click").click(function() {
+                    $("div").fadeIn(1000);//show
+                });
+                $("#toggle").click(function(){
+                    $("div").fadeToggle(1500);
+                });
+                $("#fadeTo").click(function(){
+                    $("div").fadeTo(1500,'0.6');
+                });
+
+            })
+            
+        </script>
+    </body>
+</html>

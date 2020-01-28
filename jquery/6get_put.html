@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <h4>get data</h4>
+    <button id="btn1">text</button>
+    <button id="btn2">html</button>
+    <button id="btn3">value</button>
+    <h4>put data</h4>
+    <button id="btn4">text</button>
+    <button id="btn5">html</button>
+    <button id="btn6">value</button>
+    <div>
+        this is div tag
+        <h2>This is head tag</h2>
+    </div>
+    <input type="text">
+    <script>
+        $(document).ready(function() {
+            
+            $("#btn1").click(function() {
+                var data1 = $("div").text();//retreive text from the tag.
+                alert(data1);
+            });
+            $("#btn2").click(function() {
+                var data2 = $("div").html();// retrieve text along with markup
+                alert(data2);
+            });
+            $("#btn3").click(function() {
+                var data3 = $("input").val(); //retreive the value from the fields
+                alert(data3);
+            });
+            $("#btn4").click(function() {
+               
+                $("div").text("<h2>This is new content</h2>");//put text into the tag.
+                
+            });
+            $("#btn5").click(function() {
+               data1 += $("div").html();
+               $("div").html("<h2>This is new content</h2>");// put text along with markup
+                
+            });
+            $("#btn6").click(function() {
+                $("input").val("Rathan"); //put the value into the fields
+               
+            });
+
+        })
+    </script>
+</body>
+</html>
