@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <style>
+        * {
+            margin: 0px; padding: 0px;
+        }
+        .carousel {
+            width: 1000px; height: 400px; margin: 0px auto; background: orange;
+            position: relative; overflow: hidden;
+        }
+        .carousel .left, .carousel .right {
+            padding: 20px; background: blue; color: white; text-decoration: none;
+            position: absolute; top: 160px;
+            z-index: 100;
+        }
+        .carousel .right {
+            right: 0px;
+        }
+        .carousel .img {
+            width: 1000px; height: 400px;
+        }
+        .carousel ul {
+            list-style: none; position: relative;
+        }
+        .carousel ul li {
+            width: 1000px; height: 400px; float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <a href="#" class="left"><</a>
+        <a href="#" class="right">></a>
+        <ul>
+            <li><img src="img/slider1.jpg" class="img" alt=""></li>
+            <li><img src="img/slider2.jpg" class="img" alt=""></li>
+            <li><img src="img/slider3.jpg" class="img" alt=""></li>
+            <li><img src="img/slider4.jpg" class="img" alt=""></li>
+            <li><img src="img/slider5.jpg" class="img" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        var imgcount = $(".img").length;
+        var liwidth = $(".carousel ul li").width();
+        var ulwidth = imgcount * liwidth;
+        $(".carousel ul").css({width: ulwidth, marginLeft: -liwidth});
+
+        function leftClick() {
+            $(".carousel ul").animate({left: liwidth},2000, function() {
+                //calback function
+                $(".carousel ul li:last-child").prependTo(".carousel ul");
+                $(".carousel ul").css("left","");
+            });
+        }
+
+        $(".left").click(function() {
+            leftClick();
+        });
+        $(".right").click(function() {
+            $(".carousel ul").animate({left: -liwidth},2000, function() {
+                //calback function
+                $(".carousel ul li:first-child").appendTo(".carousel ul");
+                $(".carousel ul").css("left","");
+            });
+        });
+
+        $(".carousel ul").mouseover(function() {
+            leftClick();
+        })
+
+
+    </script>
+</body>
+</html>
