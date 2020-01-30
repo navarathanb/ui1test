@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+        <style>
+            
+            .box {
+                width: 400px; height: auto; background: rgb(33, 184, 28);float: left;margin:2px;
+            }
+            .box ul li {
+                width: 300px; height: 30px; border: 2px solid orange;margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- before -->
+        <div class="box">
+            <ul>
+                <li>home</li>
+                <li>services</li>
+                <li>aboutus</li>
+                <li>contactus</li>
+            </ul>
+        </div>
+        <!-- after -->
+        <script>
+            $(function(){
+                $(".box").click(function() {
+                  //  $("ul li:last-child").prependTo("ul");
+                    $("ul li:first-child").appendTo("ul");
+                    
+                })
+            });
+        </script>
+    </body>
+</html>
