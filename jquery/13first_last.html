@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+        <style>
+            input[type='submit'] {
+                width: 180px; height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="submit" value="submit" >
+        <div class="root">
+            <div class="div1">
+                <h4>head tag</h4>
+                <p>para-1</p>
+                <p>para-2</p>
+                <p>para-3</p>
+                <p>para-4</p>
+            </div>
+            <div class="div2">
+                <h4>head tag</h4>
+                <p>para-1</p>
+                <p>para-2</p>
+                <p>para-3</p>
+                <p>para-4</p>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("input[type='submit']").click(function(){
+                    $("h4").first().css("background","orange");
+                    $("h4").last().css("background","red");
+                    $("h4").animate({width:'300', height:'60'},1500)
+                })
+               
+            });
+        </script>
+    </body>
+</html>

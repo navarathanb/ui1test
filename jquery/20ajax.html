@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <div id='res'></div>
+        <div id='data'></div>
+        <script>
+            $(document).ready(function(){
+                var res = '<table border="1" cellpadding="10"><tr><td>Name</td></tr>';
+                $.getJSON("json.txt",function(response){
+                    $.each(response,function(i,data) {
+                        res += "<tr><td>"+data.name+"</td></tr>";
+                        $("#res").html(res+"</table>");
+                    });
+                });
+
+                
+            });
+        </script>
+    </body>
+</html>

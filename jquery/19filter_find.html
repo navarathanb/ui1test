@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="jquery-3.4.1.min.js"></script>
+        <style>
+            input[type='submit'] {
+                width: 180px; height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="submit" value="filter" >
+        <div class="parent">
+            <div class="root" style='border: 2px solid green; width: 400px;'>
+                <div>
+                    <p>para-1</p>
+                    <h4>head tag</h4>
+                    <p>para-1</p>
+                    <p>para-2</p>
+                    <p class='rest'>para-3</p>
+                    <p>para-4</p>
+                </div>
+               
+            </div>
+            <div class="root" style='border: 2px solid green; width: 400px;'>
+                <div>
+                    <p>para-1</p>
+                    <h4>head tag</h4>
+                    <p>para-1</p>
+                    <p>para-2</p>
+                    <p class='rest'>para-3</p>
+                    <p>para-4</p>
+                </div>
+               
+            </div>
+            <div class="root" style='border: 2px solid green; width: 400px;'>
+                <div>
+                    <p>para-1</p>
+                    <h4>head tag</h4>
+                    <p>para-1</p>
+                    <p>para-2</p>
+                    <p class='rest'>para-3</p>
+                    <p>para-4</p>
+                </div>
+               
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("input[type='submit']").click(function(){
+                  // $("p").filter(".root .rest").css("background","red");
+                   $(".root").find(".rest").css("background","red");
+                    //$(".root .rest")
+                })
+
+                $(".root").click(function(){
+                    $(this).find(".rest").css("background","red");
+                })
+               
+            });
+        </script>
+    </body>
+</html>

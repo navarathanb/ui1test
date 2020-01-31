@@ -1,0 +1,30 @@
+[
+    {
+        "name":"james",
+        "email":"james@gmail.com",
+        "mobile":3432423,
+        "state":"AP",
+        "id":100
+    },
+    {
+        "name":"vimal",
+        "email":"vcimal@gmail.com",
+        "mobile":34435435332423,
+        "state":"UP",
+        "id":101
+    },
+    {
+        "name":"suresh",
+        "email":"suresh@gmail.com",
+        "mobile":3464353,
+        "state":"KA",
+        "id":102
+    },
+    {
+        "name":"kiran",
+        "email":"kiran@gmail.com",
+        "mobile":56456,
+        "state":"GJ",
+        "id":103
+    }
+]
