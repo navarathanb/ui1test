@@ -3,18 +3,32 @@
         <script src="jquery-3.4.1.min.js"></script>
     </head>
     <body>
-        <div id='res'></div>
-        <div id='data'></div>
+        <div id='res' style="float: left;"></div>
+        <div id='data' style="float: left;border: 1px solid green; width: 300px; height: auto;padding: 20px;line-height: 30px;"></div>
         <script>
             $(document).ready(function(){
+                var data;
                 var res = '<table border="1" cellpadding="10"><tr><td>Name</td></tr>';
                 $.getJSON("json.txt",function(response){
+                    data = response;
                     $.each(response,function(i,data) {
-                        res += "<tr><td>"+data.name+"</td></tr>";
+                        res += "<tr><td name='"+data.id+"'>"+data.name+"</td></tr>";
                         $("#res").html(res+"</table>");
                     });
+                    disp(response);
                 });
-
+                function disp(){
+                    
+                    $("td").click(function(evt){
+                        var id = $(this).attr("name");
+                        for(i=0;i<data.length;i++) {
+                            if(id == data[i].id) {
+                                var res1 = "Name: "+data[i].name+"<br>Email: "+data[i].email+"<br>Mobile: "+data[i].mobile+"<br>Id: "+data[i].id;
+                                $("#data").html(res1);
+                            }
+                        }
+                    });
+                }
                 
             });
         </script>
