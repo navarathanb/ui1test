@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function disp(val) {
+            document.getElementById("res").innerHTML = val;
+        }
+    </script>
+</head>
+<body>
+    <form action="test.html" method="get">
+        Name :<input type="text" id="name" name="name" value="" required pattern="[A-Z]{5,8}" title="enter only caps, min 5 and max 8">
+        <br>
+        <br>
+        Email: <input type="email" name="email" required autocomplete="off">
+        <br>
+        <br>
+        mobile: <input type="tel" name="mobile" required>
+        <br>
+        <br>
+        
+        Search: <input type="search" name="search">
+        <br>
+        <br>
+        number: <input type="number" name="num" max="10" step="2">
+        <br>
+        <br>
+        color: <input type="color" name="color" id="" value="#0f0f0f" >
+        <br>
+        <br>
+        Range: <input type="range" name="range" id="" value="10" max="1000" onmousemove="disp(this.value)">
+        <span id="res"></span>
+        <br>
+        <br>
+        number: <input type="number" name="num" max="10" step="2">
+        <br>
+        <br>
+        date: <input type="date" name="" id="">
+        <br><br>
+        month: <input type="month" name="" id="">
+        <br><br>
+        week: <input type="week" name="" id="">
+        <br><br>
+        Search: <input type="text" name="search" id="search"  list="test">
+        <datalist id="test">
+            <option>sai</option>
+            <option>vamshi</option>
+            <option>kishore</option>
+            <option>james</option>
+            <option>patrik</option>
+        </datalist>
+        <br><br>
+
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
