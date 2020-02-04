@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function disp() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('pwd').value;
+            //var obj = {email: email, password:password}
+            localStorage.setItem("item1", email);
+            localStorage.setItem("item2", password);
+            sessiondata();
+        }
+        function logout() {
+            localStorage.removeItem("item1");
+            localStorage.removeItem("item2");
+            sessiondata();
+        }
+    </script>
+</head>
+<body>
+    <!--     
+        locationStorage: it will stores the data in the browser till the session is expired
+        sessionStorage: it will stores the data in the browser till the browser is closed
+    -->
+    Email : <input type="text" name="email" id='email'>
+    <br><br>
+    Password : <input type="password" name="pwd" id="pwd">
+    <br><br>
+    <input type="submit" value="submit" onclick="disp()">
+    <div id="store">
+        <script>
+            sessiondata();
+          function sessiondata() {
+            if(localStorage.getItem("item1")) {
+            var item1 = localStorage.getItem("item1");
+            // var item1 = sessoinStorage.getItem("item1");
+            var item2 = localStorage.getItem("item2");
+            document.getElementById("store").innerHTML = "Email: "+item1+"<br>Password: "+item2;
+           }else {
+               document.getElementById("store").innerHTML = "Session expired...";
+           }
+          }
+        </script>
+    </div>
+    <input type="submit" value='logout' onclick="logout()">
+</body>
+</html> 
