@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery/jquery-3.4.1.min.js"></script>
+
+</head>
+<body>
+   Name <input type="text" id="name">
+    <br><br>
+   Email <input type="text" id="email">
+    <br><br>
+    <input type="submit" value="submit" disabled>
+    <br><br>
+    <meter id="fill" value="0" min="0" max="100" style="width: 250px; height: 30px;"></meter>
+    <progress id='prog' value="10" min="0" max="100"></progress>
+    <script>
+        $(document).ready(function(){
+            var len = $("input[type='text']").length;
+            $("#fill").attr("max",len);
+            $("input[type='text']").keyup(function(){
+                var i = 0;
+                debugger;
+                $("input[type='text']").each(function(){
+                    if($(this).val().length > 0) {
+                        i++;
+                        $("#fill").val(i);
+                    }
+                    if(i == len) {
+                        $("input[type='submit']")[0].disabled = false;
+                    }
+                })
+            });
+        })
+    </script>
+</body>
+</html>
