@@ -45,3 +45,12 @@
         float: left;
     }
 }
+
+@media print {
+    .box {
+        width: 200px;
+        border: 2px solid red;
+        height: 100px;
+        margin: 5px;
+    }
+}
