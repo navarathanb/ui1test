@@ -1,0 +1,74 @@
+[
+   {
+       "pname":"Red Shirt",
+       "description":"",
+       "cost":"345$",
+       "review":4,
+       "img":"app/img/1.jpg",
+       "id":1111
+   },
+   {
+    "pname":"Blue Shirt",
+    "description":"",
+    "cost":"145$",
+    "review":2,
+    "img":"app/img/2.jpg",
+    "id":1112
+    },
+   {
+    "pname":"Green Shirt",
+    "description":"",
+    "cost":"305$",
+    "review":3,
+    "img":"app/img/3.jpg",
+    "id":1113
+    },
+   {
+    "pname":"Ink Jet Printer",
+    "description":"",
+    "cost":"35$",
+    "review":1,
+    "img":"app/img/4.jpg",
+    "id":1114
+    },
+   {
+    "pname":"Color Printer",
+    "description":"",
+    "cost":"45$",
+    "review":4,
+    "img":"app/img/5.jpg",
+    "id":1115
+    },
+   {
+    "pname":"HP Color Printer",
+    "description":"",
+    "cost":"340$",
+    "review":5,
+    "img":"app/img/6.jpg",
+    "id":1116
+    },
+   {
+    "pname":"Samsung Mobile",
+    "description":"",
+    "cost":"345$",
+    "review":5,
+    "img":"app/img/7.jpg",
+    "id":1117
+    },
+   {
+    "pname":"Redmi 7B",
+    "description":"",
+    "cost":"145$",
+    "review":3,
+    "img":"app/img/8.jpg",
+    "id":1118
+    },
+   {
+    "pname":"IPhone 7s",
+    "description":"",
+    "cost":"305$",
+    "review":2,
+    "img":"app/img/9.jpg",
+    "id":1119
+    }
+]

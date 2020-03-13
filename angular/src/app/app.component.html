@@ -1,0 +1,152 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Welcome User : {{name}}</h2>
+            <p>{{data}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <!-- rounter - 4 -->
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a [routerLink] = "['/servicesComponent']">Services</a>                    
+                </li>
+                <li class="list-group-item">
+                    <a [routerLink] = "['/aboutusComponent']">About Us</a>                    
+                </li>
+                <li class="list-group-item">
+                    <a [routerLink] = "['/contactComponent']">Contact Us</a>                    
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <!-- rounter -5 -->
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <!-- directives: *ngIf, *ngFor -->
+           <div class="table-responsive">
+            <table class="table table-bordered" *ngIf = "result == true">
+                <tr>
+                    <td>Id</td> <td>Name</td> <td>Email</td> <td>Mobile</td><td>Image</td>
+                </tr>
+                <tr *ngFor = "let obj of emps">
+                    <td>{{obj.id}}</td>  <td>{{obj.name}}</td>  <td>{{obj.email}}</td>  <td>{{obj.mobile}}</td><td>
+                        <img src="{{obj.img}}" alt="" class="image">
+                    </td> 
+                </tr>
+            </table>
+           </div>
+<!-- <img src="{{image}}" alt=""> -->
+<!-- <img [src] = "image" alt=""> -->
+        </div>
+        <div class="col-sm-6">
+            <div >
+                <!-- cart display -->
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#cartDisp" aria-expanded="false" aria-controls="collapseExample">
+                    Cart - {{addCart.length}} <span class="caret"></span>
+                </button>
+
+                <div  id="cartDisp" class="collapse">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>PName</td>
+                            <td>Cost </td>
+                            <td>Id </td>
+                            <td>PImage </td>
+                            <td>Del </td>
+                        </tr>
+                        <tr *ngFor = "let cart of addCart">
+                            <td>{{cart.pname}}</td>
+                            <td>{{cart.cost}}</td>
+                            <td>{{cart.id}}</td>
+                            <td><img src="{{cart.img}}" alt="" style="width: 80px; height: 80px;"></td>
+                            <td>
+                                <button class="btn btn-danger" (click) = "delete(cart.id)">x</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" *ngFor = "let product of products">
+            <div class="thumbnail">
+                <img src="{{product.img}}" alt="">
+                <div class="caption">
+                    <h3 class="text-center text-success">{{product.pname}}</h3>
+                    <h4 class="text-primary">
+                        <span class="text-info">{{product.cost}}</span>
+                        <span class="pull-right" *ngIf = "product.review == 1">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>                            
+                        </span>
+                        <span class="pull-right" *ngIf = "product.review == 2">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>                            
+                        </span>
+                        <span class="pull-right" *ngIf = "product.review == 3">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>                            
+                        </span>
+                        <span class="pull-right" *ngIf = "product.review == 4">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>                            
+                        </span>
+                        <span class="pull-right" *ngIf = "product.review == 5">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>                            
+                        </span>
+                    </h4>
+                    
+                    <button class="btn btn-primary" (click) = 'cart(product.pname, product.cost, product.img, product.id)'>Add to cart</button>
+                    <button class="btn btn-success pull-right" data-toggle="modal" data-target="">Read More</button>
+                    <div class="modal fade" id="{{product.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">{{product.pname}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-6"><img src="{{product.img}}" alt=""></div>
+                                    <div class="col-sm-6">
+                                        <h3 class="text-right text-primary">{{product.pname}}</h3>
+                                        <h4 class="text-right text-success">{{product.cost}}</h4>
+                                        <button type="button" class="btn btn-primary pull-right" data-dismiss="modal" (click) = 'cart(product.pname, product.cost, product.img, product.id)'>Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
